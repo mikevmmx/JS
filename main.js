@@ -82,3 +82,23 @@ function inve() {
         pantalla.innerHTML=x;
         xi=1; //reiniciar pantalla al pulsar otro número.
         }
+ function retro(){ //Borrar sólo el último número escrito.
+            cifras=x.length; //hayar número de caracteres en pantalla
+            br=x.substr(cifras-1,cifras) //describir último caracter
+            x=x.substr(0,cifras-1) //quitar el ultimo caracter
+            if (x=="") {x="0";} //si ya no quedan caracteres, pondremos el 0
+            if (br==".") {coma=0;} //Si el caracter quitado es la coma, se permite escribirla de nuevo.
+            pantalla.innerHTML=x; //mostrar resultado en pantalla	 
+            }
+   function borradoParcial() {
+           pantalla.innerHTML=0; //Borrado de pantalla;
+           x=0; //Borrado indicador número pantalla.
+           coma=0;	//reiniciamos también la coma				
+           }
+   function borradoTotal() {
+            pantalla.innerHTML=0; //poner pantalla a 0
+            x="0"; //reiniciar número en pantalla
+            coma=0; //reiniciar estado coma decimal 
+            ni=0 //indicador de número oculto a 0;
+            op="no" //borrar operación en curso.
+            }        
