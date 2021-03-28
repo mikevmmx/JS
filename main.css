@@ -23,4 +23,4 @@ th {     font-size: 13px;     font-weight: normal;     padding: 8px;     backgro
 td {    padding: 8px;     background: #444446;     border-bottom: 1px solid #fff;
     color: rgb(255, 255, 255);    border-top: 1px solid transparent; }
 
-tr:hover td { background: #d7fdd0; color: rgb(0, 0, 0); }s  
+tr:hover td { background: #d7fdd0; color: rgb(0, 0, 0); }
