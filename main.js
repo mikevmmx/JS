@@ -7,7 +7,7 @@ window.onload = function(){ //Acciones tras cargar la página
     coma=0; //estado coma decimal 0=no, 1=si;
     ni=0; //número oculto o en espera.
     op="no"; //operación en curso; "no" =  sin operación.
-
+   
     function numero(xx) { //recoge el número pulsado en el argumento.
         if (x=="0" || xi==1  ) { // inicializar un número, 
            pantalla.innerHTML=xx; //mostrar en pantalla
@@ -102,3 +102,34 @@ function inve() {
             ni=0 //indicador de número oculto a 0;
             op="no" //borrar operación en curso.
             }        
+ function genera_tabla() 
+            {
+               let num=x
+                // Obtener la referencia del elemento body
+                var body = document.getElementsByTagName("body")[0];
+              
+                // Crea un elemento <table> y un elemento <tbody>
+                var tabla   = document.createElement("table");
+                var tblBody = document.createElement("tbody");
+              
+                // Crea las celdas
+                for (var i = 1; i <= 10; i++) {
+                  // Crea las hileras de la tabla
+                  var hilera = document.createElement("tr");
+                    var celda = document.createElement("td");
+                    var textoCelda = document.createTextNode(num+" x "+ i + " = "+i*num);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                  
+              
+                  // agrega la hilera al final de la tabla (al final del elemento tblbody)
+                  tblBody.appendChild(hilera);
+                }
+              
+                // posiciona el <tbody> debajo del elemento <table>
+                tabla.appendChild(tblBody);
+                // appends <table> into <body>
+                body.appendChild(tabla);
+                // modifica el atributo "border" de la tabla y lo fija a "2";
+                tabla.setAttribute("border", "2");
+            }           
